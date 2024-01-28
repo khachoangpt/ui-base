@@ -24,7 +24,7 @@ export default function RootLayout({
   const mode = cookie.get('mode')?.value as Mode
 
   return (
-    <html lang="en" className={mode}>
+    <html lang="en" data-mode={mode}>
       <body className={clx(inter.className, 'select-none')}>
         {children}
         <Toaster theme={mode} />

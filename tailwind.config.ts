@@ -351,7 +351,7 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
+  darkMode: ['class', '[data-mode="dark"]'],
   theme: {
     extend: {
       backgroundImage: {
@@ -387,9 +387,9 @@ const config: Config = {
           })
         } else {
           addBase({
-            '@media (prefers-color-scheme: light)': {
-              ':root': { ...colors.light, ...effects.light },
-              ...components.light,
+            '@media (prefers-color-scheme: dark)': {
+              ':root': { ...colors.dark, ...effects.dark },
+              ...components.dark,
             },
           })
         }
